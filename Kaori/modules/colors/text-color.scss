@@ -1,0 +1,20 @@
+@import 'color';
+
+/* Text Color */
+@each $arrayColors, $indexArrayColors in $arrayColors {
+    $colorName: nth($indexArrayColors, 1);
+    $colorRed: nth($indexArrayColors, 2);
+    $colorGreen: nth($indexArrayColors, 3);
+    $colorBlue: nth($indexArrayColors, 4);
+    .color-text-#{$colorName},
+    .color-text-#{$colorName}-100 {
+        color: rgb($colorRed, $colorGreen, $colorBlue);
+    }
+  
+    @for $iColor from 19 through 0 {
+        $colorStep: calc($iColor * 5);
+        .color-text-#{$colorName}-#{$colorStep} {
+            color: rgba($colorRed, $colorGreen, $colorBlue, calc($colorStep / 100));
+        }
+    }
+}

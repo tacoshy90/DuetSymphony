@@ -1,0 +1,20 @@
+@import 'color';
+
+/* Background Color */
+@each $arrayColors, $indexArrayColors in $arrayColors {
+    $colorName: nth($indexArrayColors, 1);
+    $colorRed: nth($indexArrayColors, 2);
+    $colorGreen: nth($indexArrayColors, 3);
+    $colorBlue: nth($indexArrayColors, 4);
+    .color-bg-#{$colorName},
+    .color-bg-#{$colorName}-100 { 
+        background: rgb($colorRed, $colorGreen, $colorBlue); 
+    }
+  
+    @for $iColor from 19 through 0 {
+        $colorStep: calc($iColor * 5);
+        .color-bg-#{$colorName}-#{$colorStep} {
+            background: rgba($colorRed, $colorGreen, $colorBlue, calc($colorStep / 100));
+        }
+    }
+}
