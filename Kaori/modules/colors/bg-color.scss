@@ -1,4 +1,4 @@
-@import 'color';
+@import 'colorArray';
 
 /* Background Color */
 @each $arrayColors, $indexArrayColors in $arrayColors {
