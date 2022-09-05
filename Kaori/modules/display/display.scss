@@ -1,8 +1,0 @@
-@import 'displayArray';
-
-@each $arrayDisplays, $indexArrayDisplays in $arrayDisplays {
-    $displayName: nth($indexArrayDisplays, 1);
-    .d-#{$displayName} {
-        display: $displayName;
-    }
-}

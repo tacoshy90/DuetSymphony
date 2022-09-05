@@ -1,4 +1,4 @@
-@import 'colorArray';
+@import '../../core-definitions/colors';
 
 /* Text Color */
 @each $arrayColors, $indexArrayColors in $arrayColors {
